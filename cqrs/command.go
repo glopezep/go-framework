@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/dritelabs/internal/framework/domain"
+	"github.com/glopezep/framework/domain"
 )
 
 // Command is the base interface for all commands.
@@ -39,7 +39,9 @@ func (c *BaseCommand) Metadata() domain.Metadata {
 }
 
 // NewCommandHandler creates a CommandHandlerFunc with middleware support.
-func NewCommandHandler(handler CommandHandlerFunc, mws ...CommandMiddleware) CommandHandlerFunc {
+func NewCommandHandler(flusher *AggregateFlusher, handler CommandHandlerFunc, mws ...CommandMiddleware) CommandHandlerFunc {
+	// Always add FlushingCommandMiddleware as the last middleware
+	mws = append(mws, FlushingCommandMiddleware(flusher))
 	for i := len(mws) - 1; i >= 0; i-- {
 		handler = mws[i](handler)
 	}

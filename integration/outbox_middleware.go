@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/dritelabs/internal/framework/outbox"
+	"github.com/glopezep/framework/outbox"
 )
 
 func OutboxMiddleware(repo outbox.Repository) PublishMiddleware {

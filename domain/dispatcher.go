@@ -3,7 +3,7 @@ package domain
 import (
 	"context"
 
-	"github.com/dritelabs/internal/framework/bus"
+	"github.com/glopezep/framework/bus"
 )
 
 // DomainEvent is the base interface for all domain events.

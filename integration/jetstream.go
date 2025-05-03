@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/dritelabs/internal/framework/inbox"
+	"github.com/glopezep/framework/inbox"
 	"github.com/nats-io/nats.go"
 	"github.com/nats-io/nats.go/jetstream"
 )

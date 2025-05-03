@@ -3,7 +3,7 @@ package integration
 import (
 	"context"
 
-	"github.com/dritelabs/internal/framework/inbox"
+	"github.com/glopezep/framework/inbox"
 )
 
 func InboxMiddleware(store inbox.Repository) SubscribeMiddleware {

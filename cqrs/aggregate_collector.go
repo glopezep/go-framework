@@ -3,7 +3,7 @@ package cqrs
 import (
 	"context"
 
-	"github.com/dritelabs/internal/framework/domain"
+	"github.com/glopezep/framework/domain"
 )
 
 type aggregateKey struct{}
